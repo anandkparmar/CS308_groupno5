@@ -1,0 +1,89 @@
+-------------------------------------------------------
+-------------------------------------------------------
+// Course : CS308 - Large Application Practicum
+// Assignment : 1
+// Date : 24/02/2015
+// Topic : Creating Makefile and its application
+// Created By : Group - 5 
+-------------------------------------------------------
+-------------------------------------------------------
+Q.1)
+---- 
+
+g++ -o main main.cpp pts.cpp rts.cpp
+
+-------------------------------------------------------
+Q.2)
+----
+
+main : main.cpp pts.cpp rts.cpp
+	g++ -o main main.cpp pts.cpp rts.cpp
+
+-------------------------------------------------------
+Q.3)
+----
+
+main : main.o pts.o rts.o
+	g++ -o main main.o pts.o rts.o
+
+main.o : main.cpp pts.h rts.h
+	g++ -c main.cpp
+
+pts.o : pts.cpp pts.h
+	g++ -c pts.cpp
+
+rts.o : rts.cpp rts.h
+	g++ -c rts.cpp
+
+-------------------------------------------------------
+Q.4)
+----
+
+1.)
+ 
+If we change the main.cpp file, then...
+- main.o file is regenerated, other files will be remain same.
+
+2.)
+If we change the pts.h file, then...
+- main.o and pts.o files are regenerated, other files will be remain same.
+
+
+--------------------------------------------------------
+Q.5)
+----
+
+1.)
+main : main.o pts.o rts.o
+	g++ -o main main.o pts.o rts.o
+
+
+2.)
+
+If we cange the main.cpp file then....
+- main.o file is regenerated and other files will be remain same.
+
+--------------------------------------------------------
+Q.6)
+----
+
+1.)
+
+object = main.o pts.o rts.o
+x = g++
+
+main : $(object)
+	$(x) -o main $(object)
+
+main.o : main.cpp pts.h rts.h
+
+pts.o : pts.cpp pts.h
+
+rts.o : rts.cpp rts.h
+
+2.)
+
+target : 
+	rm main main.o pts.o rts.o
+
+
