@@ -1,0 +1,33 @@
+#ifndef _POINT_H
+#define _POINT_H
+
+/*
+	Class: pts 
+		A class to define functions for main.cpp file. 
+
+	Variables:
+		This Variables are private variables.
+		x - Integer
+		y - Integer				
+		
+	Functions have:
+	- take pts
+	- Move
+	- Get X
+	- Get Y
+*/
+
+class pts
+{
+public:
+  pts();
+  pts(int xval, int yval);
+  void move(int dx, int dy);
+  int get_x() const;
+  int get_y() const;
+
+private:
+  int x, y;
+};
+
+#endif

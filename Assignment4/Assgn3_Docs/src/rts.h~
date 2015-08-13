@@ -1,0 +1,21 @@
+#ifndef _RECTANGLE_H
+#define _RECTANGLE_H
+
+#include "pts.h"
+
+class rts
+{
+public:
+  rts();
+  rts(pts bl, pts tr);
+  void move(int dx, int dy);
+  pts get_bottom_left() const;
+  pts get_top_right() const;
+  int width() const;
+  int height() const;
+  int area() const;
+private:
+  pts bottom_left, top_right;
+};
+
+#endif
